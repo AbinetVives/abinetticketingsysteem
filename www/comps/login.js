@@ -25,14 +25,6 @@ let MyLogin = {
 			:src="customLogo"
 		/>
 		
-		<div class="header"
-			:class="{ dark:colorLogin.isDark() }"
-			:style="bgStyles"
-		>
-			<img src="images/lock.png" />
-			<span>{{ appName }}</span>
-		</div>
-		
 		<!-- server not connected -->
 		<div class="message" v-if="!backendReady">
 			<span>{{ message.wsBroken[language] }}</span>
@@ -113,6 +105,7 @@ let MyLogin = {
 						:caption="message.stayLoggedIn[language]"
 					/>
 				</div>
+				<a href="mailto:abinetticketing@gmail.com?subject=Aanvraag%20account&body=Beste%0A%0AIk%20zou%20graag%20een%20account%20op%20het%20ticketsysteem%20hebben.%0A%0AMet%20Vriendelijke%20Groeten"><button class="active clickable">Account Aanvragen</button></a>
 				<button
 					@click="authenticate"
 					@keyup.enter="authenticate"
@@ -136,11 +129,6 @@ let MyLogin = {
 				v-if="companyWelcome !== ''"
 				v-html="getLineBreaksParsedToHtml(companyWelcome)"
 			></span>
-		</div>
-		
-		<!-- cluster node ID -->
-		<div class="cluster" v-if="backendReady">
-			{{ message.clusterNode[language] + clusterNodeName }}
 		</div>
 	</div>`,
 	props:{

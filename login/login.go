@@ -202,7 +202,10 @@ func Get(byId int64, byString string, orderBy string, orderAsc bool, limit int, 
 	return logins, total, nil
 }
 
+
 // set login with meta data
+
+//hier maakt een user aan i guess????
 // returns created login ID if new login
 func Set_tx(tx pgx.Tx, id int64, loginTemplateId pgtype.Int8, ldapId pgtype.Int4,
 	ldapKey pgtype.Text, name string, pass string, admin bool, noAuth bool,

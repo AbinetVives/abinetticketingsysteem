@@ -132,11 +132,11 @@ const MyStoreLocal = {
 		}
 	},
 	getters:{
-		customLogo:(state) => !state.activated || state.companyLogo === ''
+		customLogo:(state) => state.companyLogo === ''
 			? 'images/logo.png' : `data:image;base64,${state.companyLogo}`,
 		
-		customLogoUrl:(state) => !state.activated || state.companyLogoUrl === ''
-			? 'https://rei3.de/' : state.companyLogoUrl,
+		customLogoUrl:(state) => state.companyLogoUrl === ''
+			? 'https://teamabinet.be/' : state.companyLogoUrl,
 			
 		loginBackground:(state) => state.companyLoginImage === ''
 			? `background-image:url('../images/backgrounds/${state.loginBackground}.webp');`
